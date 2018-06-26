@@ -1,0 +1,94 @@
+.site-header {
+    position: absolute;
+    height: 175px;
+    top: -70px;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    opacity: .9;
+    background-color: #FFF;
+    border-bottom-left-radius: 0 0;
+    border-bottom-right-radius: 0 0;
+    transition: border-radius .5s ease;
+
+    @mixin exMedium {
+        border-bottom-left-radius: 100% 90%;
+        border-bottom-right-radius: 100% 90%;
+        left: -5%;
+        width: 110%;
+    }
+
+    &__menu-icon {
+        width: 25px;
+        height: 19px;
+        z-index: 10;
+        position: absolute;
+        top: 125px;
+        right: 100px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 25px;
+            height: 4px;
+            background-color: $mainBlue;
+            transform-origin: 0 0;
+            transition: transform .3s ease-out;
+        }
+
+        &__middle {
+            position: absolute;
+            top: 8px;
+            left: 0;
+            width: 25px;
+            height: 4px;
+            background-color: $mainBlue;
+            transition: all .3s ease-out;
+            transform-origin: 0 50%;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 25px;
+            height: 4px;
+            background-color: $mainBlue;
+            transform-origin: 0 100%;
+            transition: transform .3s ease-out;
+        }
+
+        @mixin exMedium {
+            display: none;
+        }
+    }
+
+    &__menu-content {
+        opacity: 0;
+        z-index: -10;
+        position: relative;
+        padding-top: 110px;
+
+        @mixin exMedium {
+            opacity: 1;
+            z-index: 1;
+        }
+    }
+
+    &__logo {
+        position: absolute;
+        top: 35%;
+        padding-left: 0;
+
+        @mixin exMedium {
+            padding-left: 3%;
+        }
+
+        @mixin atLarge {
+            padding-left: 0;
+        }
+    }
+}

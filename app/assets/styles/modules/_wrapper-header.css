@@ -1,0 +1,9 @@
+.wrapper-header {
+    padding-left: -150px;
+    padding-right: 0;
+
+    @mixin exMedium; {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
