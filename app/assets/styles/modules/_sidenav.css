@@ -1,0 +1,21 @@
+.sidenav {
+    height: 100%;
+    background-color: #111;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    width: 0;
+
+    & a {
+        text-decoration: none;
+        color: #FFF;
+        display: block;
+    }
+
+    &--visible {
+        width: 250px;
+    }
+
+    
+}

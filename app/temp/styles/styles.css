@@ -399,7 +399,7 @@ a {
 		color: #FFF;
 		font-size: 1.1rem;
 		font-weight: 400;
-		text-shadow: 2px 2px 0 rgba(0, 0, 0, .1);
+		text-shadow: 2px 2px 0 rgba(0, 0, 0, .7);
 		text-align: center;
 		margin-top: .1rem;
 		margin-bottom: .1rem;
@@ -437,9 +437,9 @@ a {
 
 .btn {
 	background: linear-gradient(#3f8898, #2f5572);
+	opacity: .9;
 	border: solid;
 	border-color: #2f5572;
-	border-radius: 7%;
 	border-width: 2px;
 	color: #FFF;
 	text-decoration: none;
@@ -460,7 +460,7 @@ a {
     margin-right: auto;
 }
 
-@media (min-width: 870px) {
+@media (min-width: 990px) {
 
 .wrapper {
         padding-left: 150px;
@@ -594,7 +594,7 @@ a {
     }
 
 .site-header {
-    position: absolute;
+    position: fixed;
     height: 175px;
     top: -70px;
     left: 0;
@@ -602,16 +602,18 @@ a {
     z-index: 2;
     opacity: .9;
     background-color: #FFF;
+    border-bottom: 0.9px solid rgba(51, 51, 51, .7); 
+    box-shadow: 0 5px 5px -5px #000;
     border-bottom-left-radius: 0 0;
     border-bottom-right-radius: 0 0;
-    transition: border-radius .5s ease;
+    transition: border-radius .3s ease;
 }
 
 @media (min-width: 990px) {
 
 .site-header {
-        border-bottom-left-radius: 100% 90%;
-        border-bottom-right-radius: 100% 90%;
+        border-bottom-left-radius: 100% 50%;
+        border-bottom-right-radius: 100% 50%;
         left: -5%;
         width: 110%
 }
@@ -622,18 +624,18 @@ a {
         height: 19px;
         z-index: 10;
         position: absolute;
-        top: 125px;
-        right: 100px;
+        top: 103px;
+        right: 15px;
     }
 
 .site-header__menu-icon::before {
             content: "";
             position: absolute;
-            top: -1px;
+            top: -2px;
             left: 0;
             width: 25px;
-            height: 4px;
-            background-color: #2f5572;
+            height: 3px;
+            background-color: #333;
             -webkit-transform-origin: 0 0;
                     transform-origin: 0 0;
             transition: -webkit-transform .3s ease-out;
@@ -646,8 +648,8 @@ a {
             top: 8px;
             left: 0;
             width: 25px;
-            height: 4px;
-            background-color: #2f5572;
+            height: 3px;
+            background-color: #333;
             transition: all .3s ease-out;
             -webkit-transform-origin: 0 50%;
                     transform-origin: 0 50%;
@@ -659,8 +661,8 @@ a {
             bottom: -2px;
             left: 0;
             width: 25px;
-            height: 4px;
-            background-color: #2f5572;
+            height: 3px;
+            background-color: #333;
             -webkit-transform-origin: 0 100%;
                     transform-origin: 0 100%;
             transition: -webkit-transform .3s ease-out;
@@ -675,25 +677,11 @@ a {
     }
     }
 
-.site-header__menu-content {
-        opacity: 0;
-        z-index: -10;
-        position: relative;
-        padding-top: 110px;
-    }
-
-@media (min-width: 990px) {
-
-.site-header__menu-content {
-            opacity: 1;
-            z-index: 1
-    }
-    }
-
 .site-header__logo {
         position: absolute;
-        top: 35%;
+        top: 37%;
         padding-left: 0;
+        transition: all .3s ease;
     }
 
 @media (min-width: 990px) {
@@ -709,6 +697,49 @@ a {
             padding-left: 0
     }
     }
+
+.site-header__menu-icon--close-x::before {
+            -webkit-transform: rotate(40deg) scaleX(1.26);
+                    transform: rotate(40deg) scaleX(1.26);
+            opacity: .8;
+        }
+
+.site-header__menu-icon--close-x .site-header__menu-icon__middle {
+            opacity: 0;
+            -webkit-transform: scaleX(0);
+                    transform: scaleX(0);
+        }
+
+.site-header__menu-icon--close-x::after {
+            -webkit-transform: rotate(-40deg) scaleX(1.26);
+                    transform: rotate(-40deg) scaleX(1.26);
+            opacity: .8;     
+        }
+
+.site-header__menu-content {
+        opacity: 1;
+        z-index: -10;
+        position: relative;
+        padding-top: 70px;
+        left: 1000px;
+    }
+
+@media (min-width: 990px) {
+
+.site-header__menu-content {
+            opacity: 1;
+            z-index: 1;
+            padding-top: 110px;
+            left: -10px
+    }
+    }
+
+.site-header__menu-content--is-visible {
+            opacity: 1;
+            z-index: 1;
+            left: 500px;
+            transition: all .5s ease;
+        }
 
 .car-image {
     position: absolute;
@@ -761,6 +792,10 @@ a {
     padding: 1.2rem 0;
 }
 
+.page-section--alternate-bg {
+        background-color: #F8F8F8;
+    }
+
 @media (min-width: 870px) {
 
 .page-section {
@@ -790,7 +825,7 @@ a {
     }
     }
 
-@media (min-width: 870px) {
+@media (min-width: 990px) {
 
 .primary-nav--pull-right {
             float: right
@@ -812,9 +847,10 @@ a {
         display: inline-block;
         list-style: none;
         padding-right: 7px;
+        padding-top: 10px;
     }
 
-@media (min-width: 870px) {
+@media (min-width: 990px) {
 
 .primary-nav li {
             padding-right: 15px
@@ -825,13 +861,82 @@ a {
         text-decoration: none;
         display: block;
         font-weight: 600;
-        font-size: .8rem;
+        font-size: 1rem;
         color: rgba(51,51,51, .9);
     }
 
-@media (min-width: 1205px) {
+.headline {
+    font-weight: 300;
+    font-size: 1.9rem;
+    color: #333;
+}
 
-.primary-nav a {
-            font-size: 1rem
+@media (min-width: 640px) {
+
+.headline {
+        font-size: 2.875rem
+}
     }
+
+.headline--centered {
+        text-align: center;
+    }
+
+.headline--orange {
+        color: #d59541;
+    }
+
+.headline--small {
+    font-size: 1.2rem;
+    }
+
+@media (min-width: 640px) {
+
+.headline--small {
+        font-size: 1.875rem
+    }
+    }
+
+.headline--narrow {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+.headline--light {
+        font-weight: 100;
+    }
+
+.headline--b-margin-small {
+        margin-bottom: .5em;
+    }
+
+.headline--b-margin-large {
+        margin-bottom: 1.6em;
+    }
+
+.headline--no-t-margin {
+        margin-top: 0;
+    }
+
+.sidenav {
+    height: 100%;
+    background-color: #111;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    width: 0;
+
+    
+}
+
+.sidenav a {
+        text-decoration: none;
+        color: #FFF;
+        display: block;
+    }
+
+.sidenav--visible {
+        width: 250px;
     }
